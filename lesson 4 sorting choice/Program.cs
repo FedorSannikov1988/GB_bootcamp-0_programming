@@ -22,7 +22,7 @@ for (int i = 0; i < array.Length; i++)
 }
 Console.WriteLine("");
 
-//алгоритм сортировки
+//алгоритм сортировки выбором
 
 for (int i = 0; i < (array.Length - 1); i++)
 {
