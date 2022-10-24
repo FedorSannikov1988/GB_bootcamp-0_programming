@@ -9,6 +9,7 @@ int[] array = new int[N];
 for (int i = 0; i < array.Length; i++)
 {
     Console.Write($"Введите число {i + 1}: ");
+    
     array[i] = Convert.ToInt32(Console.ReadLine());
 }
 
