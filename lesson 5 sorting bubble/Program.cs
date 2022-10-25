@@ -9,7 +9,7 @@ int[] array = new int[N];
 for (int i = 0; i < array.Length; i++)
 {
     Console.Write($"Введите число {i + 1}: ");
-    
+
     array[i] = Convert.ToInt32(Console.ReadLine());
 }
 
@@ -23,24 +23,20 @@ for (int i = 0; i < array.Length; i++)
 }
 Console.WriteLine("");
 
-//алгоритм сортировки выбором
+//алгоритм сортировки пузырьком
 
-for (int i = 0; i < (array.Length - 1); i++)
+for (int i = 0; i < array.Length; i++)
 {
-    int Index = i;
-
-    for (int j = i + 1; j < array.Length; j++)
+    for (int j = 0; j < (array.Length - 1); j++)
     {
-        if (array[j] < array[Index])
-        // if (array[j] > array[Index])
+        if (array[j] < array[j + 1])
+        // if (array[j] > array[j + 1])
         {
-            Index = j;
+            int temp = array[j];
+            array[j] = array[j + 1];
+            array[j + 1] = temp;
         }
     }
-
-    int temp = array[Index];
-    array[Index] = array[i];
-    array[i] = temp;
     
     Console.WriteLine($"Шаг сортирвки {i+1}:");
 
@@ -48,7 +44,7 @@ for (int i = 0; i < (array.Length - 1); i++)
     {
         Console.Write($"{array[g]}; ");
     }
-    Console.WriteLine("");    
+    Console.WriteLine("");
 }
 
 //распечатываем отсортированный массив
