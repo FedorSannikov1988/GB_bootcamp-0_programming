@@ -7,16 +7,16 @@ int[] QuickSort(int[] array, int startIndex, int stopIndex)
         return array;
     }
     
-    int pivotIndex = GetPivotIndex(array, startIndex, stopIndex);
+    int pivotIndex = GetPivotIndexAndSort(array, startIndex, stopIndex);
 
     QuickSort(array, startIndex, pivotIndex - 1);
     
     QuickSort(array, pivotIndex + 1, stopIndex);
     
-    return array; 
+    return array;
 }
 
-int GetPivotIndex(int[] array, int startIndex, int stopIndex)
+int GetPivotIndexAndSort(int[] array, int startIndex, int stopIndex)
 {
     int pivotIndex = startIndex - 1;
 
@@ -37,7 +37,7 @@ int GetPivotIndex(int[] array, int startIndex, int stopIndex)
     return pivotIndex;
 }
 
-static void Swap(int[] array, int leftItem, int rigthItem)
+void Swap(int[] array, int leftItem, int rigthItem)
 {
     int temp = array[leftItem];
     array[leftItem] = array[rigthItem];
@@ -57,7 +57,7 @@ for (int i = 0; i < Array.Length; i++)
     Array[i] = Convert.ToInt32(Console.ReadLine());
 }
 
-int[] SortArray = QuickSort(Array, 0, (Array.Length-1));
+int[] SortArray = QuickSort(Array, (Array.Length - Array.Length), (Array.Length-1));
 
 Console.WriteLine("Отсортированный массив:");
 
